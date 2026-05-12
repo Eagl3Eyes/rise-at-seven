@@ -1,0 +1,254 @@
+/* ================================================================
+   Rise at Seven — React Migration
+   src/index.css
+   ================================================================ */
+
+/* ── Saans font-face declarations ──────────────────────────────── */
+/* Fonts must live in /public/fonts/ (copy from riseatseven-clone/fonts/) */
+
+@font-face {
+  font-family: "saans";
+  src: url('/fonts/SaansLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "saans";
+  src: url('/fonts/SaansRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "saans";
+  src: url('/fonts/SaansMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "saans";
+  src: url('/fonts/SaansSemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "saans";
+  src: url('/fonts/SaansBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Tailwind layers ────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens & CSS reset (in @layer base) ─────────────────── */
+@layer base {
+  :root {
+    --color-grey-50:  #f7f7f7;
+    --color-grey-100: #efeeec;
+    --color-grey-150: #e9e9e9;
+    --color-grey-200: #bebebe;
+    --color-grey-300: #6a6a6a;
+    --color-grey-400: #282828;
+    --color-grey-500: #1f1f1f;
+    --color-grey-600: #1a1a1a;
+    --color-grey-800: #121212;
+    --color-grey-900: #111212;
+    --color-mint:     #b2f6e3;
+    --mask-colour:    #b2f6e3;
+
+    --font-sans-primary: "saans", ui-sans-serif, system-ui, sans-serif;
+
+    --tracking-tightish: -0.025em;
+
+    /* Custom easing — used site-wide; overrides .transition utility below */
+    --ease-smooth: cubic-bezier(0.135, 0.9, 0.15, 1);
+    --default-transition-duration: 0.6s;
+    --default-transition-timing-function: cubic-bezier(0.135, 0.9, 0.15, 1);
+
+    /* Viewport-height fix (updated by JS) */
+    --spacing-screen-fix:     calc(var(--vh, 1vh) * 100);
+    --spacing-screen-fix-110: calc(var(--vh, 1vh) * 110);
+  }
+
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  html, :host {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: 1.5;
+    font-family: var(--font-sans-primary);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-sans-primary);
+    background-color: var(--color-grey-100);
+    color: var(--color-grey-900);
+    -webkit-font-smoothing: antialiased;
+    /* CRITICAL: clip (not hidden) so position:sticky children still work
+       while preventing horizontal scroll caused by off-screen GSAP elements */
+    overflow-x: clip;
+  }
+
+  a { color: inherit; text-decoration: inherit; }
+
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+
+  img, video { max-width: 100%; height: auto; }
+
+  ol, ul, menu { list-style: none; }
+
+  button, input, select, textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: transparent;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  [hidden]:where(:not([hidden=until-found])) { display: none !important; }
+}
+
+/* ── Override Tailwind's .transition with the site's custom easing ─
+   Placed in @layer utilities so it takes precedence over Tailwind's
+   generated .transition class while still being purge-safe.         */
+@layer utilities {
+  .transition {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow,
+      transform, filter, backdrop-filter;
+    transition-timing-function: var(--ease-smooth);
+    transition-duration: var(--default-transition-duration);
+  }
+}
+
+/* ── Global component styles (outside layers — lowest specificity)  */
+
+/* Mobile menu overlay custom fade */
+.js-modal {
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+/* Inline image wrappers inside GSAP-animated headings */
+.js-image-wrapper {
+  display: inline-flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* On touch devices the wrappers are shown immediately by JS */
+@media (pointer: coarse) {
+  .js-image-wrapper {
+    border-radius: 15%;
+  }
+}
+
+/* Circle-mask hover reveal used on blog cards and featured work */
+.circle-mask {
+  clip-path: circle(0% at 50% 120%);
+  transition-property: clip-path;
+  transition-timing-function: var(--ease-smooth);
+  transition-duration: 0.6s;
+}
+
+@media (pointer: fine) {
+  .circle-mask-container:hover .circle-mask,
+  .circle-mask-container.is-active .circle-mask {
+    clip-path: circle(85% at 50% 70%);
+  }
+}
+
+/* JS RAF-driven marquee for logo carousel */
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.logo-marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+/* Real-site style layered side blur for logo carousel edges. */
+.section-blur {
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  pointer-events: none;
+  width: 7rem;
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .section-blur {
+    width: 15rem;
+  }
+}
+
+.section-blur--left {
+  left: -2.5rem;
+  rotate: 180deg;
+}
+
+.section-blur--right {
+  right: -2.5rem;
+}
+
+.section-blur > div {
+  position: absolute;
+  inset: 0;
+  z-index: var(--index, 0);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent calc(var(--index) * calc((100 / var(--blurs)) * 1%)),
+    black calc((var(--index) + 1) * calc((100 / var(--blurs)) * 1%)),
+    black calc((var(--index) + 2) * calc((100 / var(--blurs)) * 1%)),
+    transparent calc((var(--index) + 3) * calc((100 / var(--blurs)) * 1%))
+  );
+  mask: linear-gradient(
+    90deg,
+    transparent calc(var(--index) * calc((100 / var(--blurs)) * 1%)),
+    black calc((var(--index) + 1) * calc((100 / var(--blurs)) * 1%)),
+    black calc((var(--index) + 2) * calc((100 / var(--blurs)) * 1%)),
+    transparent calc((var(--index) + 3) * calc((100 / var(--blurs)) * 1%))
+  );
+  -webkit-backdrop-filter: blur(calc(var(--index, 0) * 2px * var(--blur, 1)));
+  backdrop-filter: blur(calc(var(--index, 0) * 2px * var(--blur, 1)));
+}
+
+/* Suppress native cursor when the custom GSAP cursor is active */
+html.hide-cursor,
+html.hide-cursor * {
+  cursor: none !important;
+}
