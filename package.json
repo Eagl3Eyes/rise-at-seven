@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD
-  "name": "riseatseven-react",
-  "private": true,
-  "version": "0.0.0",
-=======
   "name": "riseatseven-nextjs",
   "private": true,
   "version": "0.1.0",
->>>>>>> f01f5af25f7598d1f376b5b8986af3edba8fb80c
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -16,16 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.12.5",
     "next": "^15.2.0",
-=======
-    "@gsap/react": "^2.1.2",
-    "gsap": "^3.12.5",
-    "next": "14.2.3",
->>>>>>> f01f5af25f7598d1f376b5b8986af3edba8fb80c
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "swiper": "^12.1.4"

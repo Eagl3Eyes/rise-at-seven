@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import Navbar from '@/components/sections/Navbar';
+import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 import LogoCarousel from '@/components/sections/LogoCarousel';
 import DrivingDemand from '@/components/sections/DrivingDemand';
@@ -11,7 +11,7 @@ import ChasingConsumers from '@/components/sections/ChasingConsumers';
 import Legacy from '@/components/sections/Legacy';
 import WhatsNew from '@/components/sections/WhatsNew';
 import ReadyToRise from '@/components/sections/ReadyToRise';
-import Footer from '@/components/sections/Footer';
+import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/ui/CustomCursor';
 import CircleMaskReveal from '@/components/ui/CircleMaskReveal';
 

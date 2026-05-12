@@ -1,19 +1,10 @@
 /* ================================================================
-<<<<<<< HEAD
-   Rise at Seven — React Migration
-   src/index.css
-   ================================================================ */
-
-/* ── Saans font-face declarations ──────────────────────────────── */
-/* Fonts must live in /public/fonts/ (copy from riseatseven-clone/fonts/) */
-=======
    Rise at Seven — Next.js Migration
    src/app/globals.css
    ================================================================ */
 
 /* ── Saans font-face declarations ──────────────────────────────── */
 /* Fonts must live in /public/fonts/ */
->>>>>>> f01f5af25f7598d1f376b5b8986af3edba8fb80c
 
 @font-face {
   font-family: "saans";
@@ -261,8 +252,6 @@ html.hide-cursor,
 html.hide-cursor * {
   cursor: none !important;
 }
-<<<<<<< HEAD
-
 /* ── Font Awesome Pro Fallbacks (for Sharp icons) ──────────────── */
 .fa-arrow-up-right {
   display: inline-flex !important;
@@ -285,5 +274,3 @@ html.hide-cursor * {
   width: 1.5em;
   height: 1.5em;
 }
-=======
->>>>>>> f01f5af25f7598d1f376b5b8986af3edba8fb80c

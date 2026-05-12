@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import plugin from 'tailwindcss/plugin';
 
 /** @type {import('tailwindcss').Config} */
@@ -7,16 +6,7 @@ export default {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-=======
-const plugin = require('tailwindcss/plugin');
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx}',
->>>>>>> f01f5af25f7598d1f376b5b8986af3edba8fb80c
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   // Disable preflight — the project ships its own CSS reset in index.css
   corePlugins: { preflight: false },

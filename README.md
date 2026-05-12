@@ -1,65 +1,105 @@
-# Rise at Seven - Web Application
+# 🚀 Rise at Seven | Premium Digital Agency Experience
 
-A premium, high-performance web application built with **Next.js** and **GSAP**, designed to mirror the sophisticated digital presence of Rise at Seven.
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.12-88CE02?style=for-the-badge&logo=greensock)](https://greensock.com/gsap/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
 
-## 🚀 Technologies
+A high-performance, visually stunning web application inspired by the digital sophistication of **Rise at Seven**. Built with a focus on immersive animations, premium aesthetics, and technical excellence.
 
-- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [GSAP](https://greensock.com/gsap/) (GreenSock Animation Platform)
-- **Components**: [React 18](https://reactjs.org/)
-- **Icons**: Font Awesome 7
-- **Slider**: [Swiper.js](https://swiperjs.com/)
+---
 
-## ✨ Key Features
+## 💎 Project Essence
 
-- **Advanced Mega Menus**: Sophisticated desktop navigation with GSAP-powered morphing transitions and dynamic image panels.
-- **Premium Aesthetics**: Glassmorphism effects, curated color palettes (Mint & Dark Grey), and smooth micro-animations.
-- **Dynamic Content**: Live announcement bar synced with production data and responsive sections.
-- **Mobile Optimized**: Fully responsive navigation and layout using modern CSS Grid and Flexbox.
-- **SEO Ready**: Semantic HTML5 structure and optimized metadata.
+This project isn't just a website; it's a digital experience designed to "wow" users from the first interaction. It combines the speed of **Next.js** with the fluidity of **GSAP** to create a seamless, high-end feel.
 
-## 🛠️ Getting Started
+### Key Highlights:
+- **🎭 Immersive Page Reveals**: Custom SVG circle-mask transitions powered by GSAP.
+- **🖱️ Smart Interactive Cursor**: A dynamic, context-aware cursor that reacts to interactive elements.
+- **🗺️ Advanced Navigation**: Complex mega-menus with morphing transitions and integrated media panels.
+- **✨ Premium UI/UX**: Glassmorphism, curated HSL color palettes, and smooth micro-animations throughout.
+- **📱 Responsive by Design**: Fluid layouts optimized for all devices using CSS Grid and modern Flexbox.
 
-### Prerequisites
+---
 
-- Node.js 18.x or later
-- npm or yarn
+## 🛠️ Technical Stack
 
-### Installation
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 15 (App Router) | Server-side rendering, routing, and performance optimization. |
+| **Animations** | GSAP & @gsap/react | High-performance, timeline-based animations and transitions. |
+| **Styling** | Tailwind CSS | Utility-first styling with a custom design system. |
+| **Icons** | Font Awesome 7 | Premium iconography. |
+| **Components** | React 18 | Declarative UI building. |
+| **Slider** | Swiper.js | Touch-enabled, hardware-accelerated sliders. |
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
+---
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 🚀 Getting Started
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### 1. Prerequisites
+- **Node.js**: `v18.x` or higher
+- **Package Manager**: `npm` (preferred)
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📂 Project Structure
-
-- `/src/components/sections`: Core page sections (Navbar, Footer, Hero, etc.)
-- `/src/components/ui`: Reusable UI primitives (Buttons, Inputs, Badges)
-- `/public`: Static assets including optimized WebP images
-- `/src/app`: Next.js App Router pages and global layouts
-
-## 🚢 Deployment
-
-The project is optimized for deployment on **Vercel**:
-
+### 2. Installation
 ```bash
-vercel --prod
+# Clone the repository
+git clone <repository-url>
+
+# Install dependencies
+npm install
+```
+
+### 3. Development
+```bash
+# Start the dev server
+npm run dev
+```
+Visit `http://localhost:3000` to see the magic happen.
+
+### 4. Production Build
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm run start
 ```
 
 ---
 
-*Made with ❤️ for Rise at Seven.*
+## 📂 Architecture & Structure
+
+```bash
+src/
+├── app/             # Next.js App Router (Layouts, Pages, Globals)
+├── components/
+│   ├── sections/    # Major page sections (Hero, Services, FeaturedWork)
+│   ├── ui/          # Atomic UI components (Buttons, CustomCursor)
+│   ├── layout/      # Shared layout components (Navbar, Footer)
+│   └── shared/      # Reusable business components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions and external libraries
+└── public/          # Static assets (Optimized WebP, Icons)
+```
+
+---
+
+## 🎨 Design System
+
+The project utilizes a custom-tailored design system defined in `tailwind.config.js`:
+- **Colors**: Mint (`#00ffc3`) & Deep Grey (`#1a1a1a`) palette.
+- **Typography**: Modern, sans-serif hierarchy for maximum readability.
+- **Effects**: Glassmorphic overlays and high-precision shadows.
+
+---
+
+## 🚢 Deployment
+
+The application is optimized for deployment on **Vercel**. 
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F%5Byour-repo%5D)
+
+---
+
+*Crafted with precision to redefine digital standards.*
